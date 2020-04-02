@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { Typography, Grid } from "@material-ui/core";
+import { Typography, Grid, Divider, Button } from "@material-ui/core";
 import { stockData } from "./data";
 
 export const Stocks = () => {
@@ -9,16 +9,21 @@ export const Stocks = () => {
       <header className="header">
         <Typography variant="h2">Stock Prices</Typography>
       </header>
-      <div>
+      <div className="refresh-container">
+        <Button variant="contained" color="primary">REFRESH</Button>
+      </div>
+      <div className="stock-container">
         {stockData.map((data, key) => {
           return (
             <div key={key}>
               <Stock
+                key={key}
                 company={data.company}
                 ticker={data.ticker}
                 stockPrice={data.stockPrice}
                 timeElapsed={data.timeElapsed}
               ></Stock>
+              <Divider />
             </div>
           );
         })}
