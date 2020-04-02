@@ -28,5 +28,17 @@ export const stockData = [
     ticker: "ADBE",
     stockPrice: "300.99 USD",
     timeElapsed: "10 sec ago"
+  },
+  {
+    company: "HubSpot Inc",
+    ticker: "HUBS",
+    stockPrice: "115.22 USD",
+    timeElapsed: "10 sec ago"
+  },
+  {
+    company: "Paypal Holdings Inc",
+    ticker: "PYPL",
+    stockPrice: "92.81 USD",
+    timeElapsed: "10 sec ago"
   }
 ];
