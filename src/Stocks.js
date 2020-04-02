@@ -35,7 +35,7 @@ export const Stocks = () => {
 };
 
 const Stock = ({ company, ticker, stockPrice, timeElapsed }) => {
-    console.log(company);
+  if (!company) return <div />;
   return (
     <Grid container className="stock" alignItems="center">
       <Grid item xs={5}>
