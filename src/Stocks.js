@@ -60,7 +60,7 @@ const Stock = ({ company, ticker, stockPrice, timeElapsed }) => {
         <Typography variant="subtitle2">{stockPrice}</Typography>
       </Grid>
       <Grid item xs={2}>
-        <Typography variant="body2">{timeElapsed}</Typography>
+        <Typography variant="body2" color="textSecondary">{timeElapsed}</Typography>
       </Grid>
     </Grid>
   );
