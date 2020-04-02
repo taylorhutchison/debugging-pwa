@@ -3,17 +3,11 @@ import "./App.css";
 import { Typography, Grid, Button } from "@material-ui/core";
 import { stockData } from "./data";
 
-export const Stocks = () => {
+export const Stocks = ({ onClick }) => {
   return (
     <>
-      <header className="header">
-        <Typography variant="h2">Stock Prices</Typography>
-      </header>
-      <div className="refresh-container">
-        <Button variant="contained" color="primary">
-          REFRESH
-        </Button>
-      </div>
+      <HomePageHeader />
+      <RefreshStocks onClick={onClick} />
       <div className="stock-container">
         {stockData.map((data, key) => {
           return (
@@ -31,6 +25,24 @@ export const Stocks = () => {
       </div>
       <Stock />
     </>
+  );
+};
+
+const HomePageHeader = () => {
+  return (
+    <header className="header">
+      <Typography variant="h2">Stock Prices</Typography>
+    </header>
+  );
+};
+
+const RefreshStocks = ({ onClick }) => {
+  return (
+    <div className="refresh-container">
+      <Button onClick={onClick} variant="contained" color="primary">
+        REFRESH
+      </Button>
+    </div>
   );
 };
 
