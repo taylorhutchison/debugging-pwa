@@ -1,8 +1,8 @@
 export const stockData = [
   {
-    company: "Sunrun Inc",
-    ticker: "TTD",
-    stockPrice: "163.03 USD",
+    company: "  Twitter Inc",
+    ticker: "TWTR",
+    stockPrice: "22.76 USD",
     timeElapsed: "10 sec ago"
   },
   {
@@ -30,4 +30,3 @@ export const stockData = [
     timeElapsed: "10 sec ago"
   }
 ];
-

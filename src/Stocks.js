@@ -9,18 +9,20 @@ export const Stocks = () => {
       <header className="header">
         <Typography variant="h2">Stock Prices</Typography>
       </header>
-      {stockData.map((data, key) => {
-        return (
-          <div key={key}>
-            <Stock
-              company={data.company}
-              ticker={data.ticker}
-              stockPrice={data.stockPrice}
-              timeElapsed={data.timeElapsed}
-            ></Stock>
-          </div>
-        );
-      })}
+      <div>
+        {stockData.map((data, key) => {
+          return (
+            <div key={key}>
+              <Stock
+                company={data.company}
+                ticker={data.ticker}
+                stockPrice={data.stockPrice}
+                timeElapsed={data.timeElapsed}
+              ></Stock>
+            </div>
+          );
+        })}
+      </div>
       <Stock />
     </>
   );
@@ -28,7 +30,7 @@ export const Stocks = () => {
 
 const Stock = ({ company, ticker, stockPrice, timeElapsed }) => {
   return (
-    <Grid container className="stock" align>
+    <Grid container className="stock" alignItems="center">
       <Grid item xs={5}>
         <Typography variant="subtitle1">{company}</Typography>
       </Grid>
