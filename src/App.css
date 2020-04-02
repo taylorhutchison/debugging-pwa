@@ -20,7 +20,11 @@
 }
 
 .stock {
-  padding-bottom: 2em;
+  padding-bottom: 0.4em;
+  padding-top: 0.4em;
+  margin-bottom: 0.3em;
+  border-radius: 2em;
+  border: 1px solid gray
 }
 
 .refresh-container {
