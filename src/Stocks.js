@@ -3,20 +3,28 @@ import "./App.css";
 import { Typography, Grid, Button } from "@material-ui/core";
 import StockImage from "./stocks.svg";
 
-export const Stocks = ({ onClick }) => {
+export const Stocks = () => {
   const [stockData, setStockData] = useState([]);
 
   useEffect(() => {
+    getStockPriceData();
+  }, []);
+
+  const onClickRefresh = () => {
+    getStockPriceData();
+  };
+
+  const getStockPriceData = () => {
     fetch("https://zeit-stock-price-api.now.sh/api")
       .then(response => response.json())
       .then(jsonData => setStockData(jsonData.body))
       .catch(err => console.log(err));
-  }, []);
+  };
 
   return (
     <>
       <HomePageHeader />
-      <RefreshStocks onClick={onClick} />
+      <RefreshStocks onClick={onClickRefresh} />
       <div className="stock-container">
         {stockData.map((data, key) => {
           return (
@@ -47,7 +55,12 @@ const HomePageHeader = () => {
 
 const RefreshStocks = ({ onClick }) => {
   return (
-    <Grid container justify="center" className="refresh-container" alignItems="center">
+    <Grid
+      container
+      justify="center"
+      className="refresh-container"
+      alignItems="center"
+    >
       <Grid item xs={2}>
         <img src={StockImage} alt="stock" className="stock-image" />
       </Grid>
@@ -65,16 +78,16 @@ const Stock = ({ company, ticker, stockPrice, timeElapsed }) => {
   if (!company) return <div />;
   return (
     <Grid container className="stock" alignItems="center">
-      <Grid item xs={5}>
+      <Grid item xs={3} sm={4}>
         <Typography variant="subtitle1">{company}</Typography>
       </Grid>
-      <Grid item xs={2}>
-        <Typography variant="h6">{ticker}</Typography>
+      <Grid item xs={2} sm={2}>
+        <Typography variant="subtitle2">{ticker}</Typography>
       </Grid>
-      <Grid item xs={3}>
+      <Grid item xs={3} sm={3}>
         <Typography variant="subtitle2">{stockPrice}</Typography>
       </Grid>
-      <Grid item xs={2}>
+      <Grid item xs={4} sm={3}>
         <Typography variant="body2" color="textSecondary">
           {timeElapsed}
         </Typography>
