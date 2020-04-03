@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Typography, Grid, Button } from "@material-ui/core";
+import StockImage from "./stocks.svg";
 
 export const Stocks = ({ onClick }) => {
   const [stockData, setStockData] = useState([]);
@@ -46,11 +47,17 @@ const HomePageHeader = () => {
 
 const RefreshStocks = ({ onClick }) => {
   return (
-    <div className="refresh-container">
-      <Button onClick={onClick} variant="contained" color="primary">
-        REFRESH
-      </Button>
-    </div>
+    <Grid container justify="center" className="refresh-container" alignItems="center">
+      <Grid item xs={2}>
+        <img src={StockImage} alt="stock" className="stock-image" />
+      </Grid>
+      <Grid item xs={4}></Grid>
+      <div>
+        <Button onClick={onClick} variant="contained" color="primary">
+          REFRESH
+        </Button>
+      </div>
+    </Grid>
   );
 };
 
