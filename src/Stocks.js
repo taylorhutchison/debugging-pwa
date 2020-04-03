@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Typography, Grid, Button } from "@material-ui/core";
-import { stockData } from "./data";
 
 export const Stocks = ({ onClick }) => {
+  const [stockData, setStockData] = useState([]);
+
+  useEffect(() => {
+    fetch("https://zeit-stock-price-api.now.sh/api")
+      .then(response => response.json())
+      .then(jsonData => setStockData(jsonData.body))
+      .catch(err => console.log(err));
+  }, []);
+
   return (
     <>
       <HomePageHeader />
@@ -60,7 +68,9 @@ const Stock = ({ company, ticker, stockPrice, timeElapsed }) => {
         <Typography variant="subtitle2">{stockPrice}</Typography>
       </Grid>
       <Grid item xs={2}>
-        <Typography variant="body2" color="textSecondary">{timeElapsed}</Typography>
+        <Typography variant="body2" color="textSecondary">
+          {timeElapsed}
+        </Typography>
       </Grid>
     </Grid>
   );
