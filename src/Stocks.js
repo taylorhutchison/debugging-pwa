@@ -78,16 +78,16 @@ const Stock = ({ company, ticker, stockPrice, timeElapsed }) => {
   if (!company) return <div />;
   return (
     <Grid container className="stock" alignItems="center">
-      <Grid item xs={3} sm={4}>
+      <Grid item xs={6} sm={4}>
         <Typography variant="subtitle1">{company}</Typography>
       </Grid>
-      <Grid item xs={2} sm={2}>
+      <Grid item xs={6} sm={2}>
         <Typography variant="subtitle2">{ticker}</Typography>
       </Grid>
-      <Grid item xs={3} sm={3}>
+      <Grid item xs={6} sm={3}>
         <Typography variant="subtitle2">{stockPrice}</Typography>
       </Grid>
-      <Grid item xs={4} sm={3}>
+      <Grid item xs={6} sm={3}>
         <Typography variant="body2" color="textSecondary">
           {timeElapsed}
         </Typography>
