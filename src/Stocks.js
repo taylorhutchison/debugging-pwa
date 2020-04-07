@@ -10,15 +10,21 @@ export const Stocks = () => {
     getStockPriceData();
   }, []);
 
+  useEffect(() => {
+    navigator.serviceWorker.addEventListener("message", (event) => {
+      setStockData(event.data.res);
+    });
+  }, []);
+
   const onClickRefresh = () => {
     getStockPriceData();
   };
 
   const getStockPriceData = () => {
     fetch("https://zeit-stock-price-api.now.sh/api")
-      .then(response => response.json())
-      .then(jsonData => setStockData(jsonData.body))
-      .catch(err => console.log(err));
+      .then((response) => response.json())
+      .then((jsonData) => setStockData(jsonData.body))
+      .catch((err) => console.log(err));
   };
 
   return (
