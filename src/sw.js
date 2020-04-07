@@ -27,33 +27,55 @@ self.addEventListener("activate", (event) => {
 //   }
 // });
 
+/**
+ * Caching strategy 2 WIP
+ * @param {*} response
+ */
+// self.addEventListener("fetch", (event) => {
+//   const cacheName = "version1";
+//   if (!navigator.onLine)
+//     event.respondWith(caches.match(event.request).then((response) => response));
+
+//   event.respondWith(
+//     caches.match(event.request).then((response) => {
+//       if (response) return response;
+//       return fetch(event.request).then((networkResponse) => {
+//         return caches.open(cacheName).then((cache) => {
+//           cache.put(event.request, networkResponse.clone());
+//           return networkResponse;
+//         });
+//       });
+//     })
+//   );
+// });
+
 self.addEventListener("fetch", (event) => {
   const cacheName = "version1";
   if (!navigator.onLine)
     event.respondWith(caches.match(event.request).then((response) => response));
 
-  event.respondWith(
-    caches.match(event.request).then((response) => {
-      if (response) return response;
-      return fetch(event.request).then((networkResponse) => {
+  event.respondWith(caches.match(event.request).then((response) => response));
+  event.waitUntil(
+    fetch(event.request)
+      .then((networkResponse) => {
         return caches.open(cacheName).then((cache) => {
           cache.put(event.request, networkResponse.clone());
           return networkResponse;
         });
-      });
-    })
+      })
+      .then((res) => console.log(res))
   );
 });
 
-function refresh(response) {
-  return self.clients.matchAll().then(function (clients) {
-    clients.forEach(function (client) {
-      var message = {
-        type: "refresh",
-        url: response,
-        eTag: response.headers.get("ETag"),
-      };
-      client.postMessage(JSON.stringify(message));
-    });
-  });
-}
+// function refresh(response) {
+//   return self.clients.matchAll().then(function (clients) {
+//     clients.forEach(function (client) {
+//       var message = {
+//         type: "refresh",
+//         url: response,
+//         eTag: response.headers.get("ETag"),
+//       };
+//       client.postMessage(JSON.stringify(message));
+//     });
+//   });
+// }
