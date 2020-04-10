@@ -12,18 +12,15 @@ export const About = () => {
     fetch("https://zeit-stock-price-api.now.sh/api/about")
       .then((response) => response.json())
       .then((jsonResponse) => {
-        console.log(jsonResponse);
         setAboutData(jsonResponse.body);
       })
-      .catch((err) => console.log(err));
+      .catch((err) => console.log(err.message));
   };
-
-  console.log(aboutData);
 
   return (
     <>
-      <Grid container justify="center" style={{ backgroundColor: "#d2c6b2" }}>
-        <Grid item xs={10} style={{ paddingTop: "2em", paddingBottom: "2em" }}>
+      <Grid container justify="center" className="tagline-container">
+        <Grid item xs={10}>
           <Typography variant="h4">{aboutData.tagLine}</Typography>
         </Grid>
       </Grid>
@@ -32,9 +29,9 @@ export const About = () => {
         container
         direction="column"
         alignItems="center"
-        style={{ backgroundColor: "#f2ed6f" }}
+        className="features-container"
       >
-        <Grid item style={{ paddingTop: "2em", paddingBottom: "1em" }}>
+        <Grid item>
           <Typography variant="h4">FEATURES</Typography>
         </Grid>
         <Grid item>

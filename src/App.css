@@ -38,3 +38,15 @@ a {
 .refresh-container {
   padding-top: 3em;
 }
+
+.tagline-container {
+  background-color: #d2c6b2;
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
+
+.features-container {
+  background-color: #f2ed6f;
+  padding-bottom: 2em;
+  padding-top: 2em;
+}
