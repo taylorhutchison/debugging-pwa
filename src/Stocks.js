@@ -21,7 +21,7 @@ export const Stocks = () => {
   };
 
   const getStockPriceData = () => {
-    fetch("https://zeit-stock-price-api.now.sh/api")
+    fetch("https://zeit-stock-price-api.now.sh/api/prices")
       .then((response) => response.json())
       .then((jsonData) => setStockData(jsonData.body))
       .catch((err) => console.log(err));
@@ -76,16 +76,16 @@ const Stock = ({ company, ticker, stockPrice, timeElapsed }) => {
   return (
     <Grid container className="stock" alignItems="center">
       <Grid item xs={6} sm={4}>
-        <Typography variant="subtitle1">{company}</Typography>
+        <Typography variant="subtitle1" align="center">{company}</Typography>
       </Grid>
       <Grid item xs={6} sm={2}>
-        <Typography variant="subtitle2">{ticker}</Typography>
+        <Typography variant="subtitle2"  align="center">{ticker}</Typography>
       </Grid>
       <Grid item xs={6} sm={3}>
-        <Typography variant="subtitle2">{stockPrice}</Typography>
+        <Typography variant="subtitle2"  align="center">{stockPrice}</Typography>
       </Grid>
       <Grid item xs={6} sm={3}>
-        <Typography variant="body2" color="textSecondary">
+        <Typography variant="body2" color="textSecondary"  align="center">
           {timeElapsed}
         </Typography>
       </Grid>
