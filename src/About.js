@@ -36,9 +36,9 @@ export const About = () => {
         </Grid>
         <Grid item>
           <ul>
-            {aboutData.features.map((feature) => {
+            {aboutData.features.map((feature, key) => {
               return (
-                <li>
+                <li key={key}>
                   <Typography variant="h6">{feature}</Typography>
                 </li>
               );
