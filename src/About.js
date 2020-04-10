@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Grid, Typography } from "@material-ui/core";
 
 export const About = () => {
-  const [aboutData, setAboutData] = useState({});
+  const [aboutData, setAboutData] = useState({ tagLine: "", features: [] });
 
   useEffect(() => {
     getAboutData();
@@ -17,6 +17,8 @@ export const About = () => {
       })
       .catch((err) => console.log(err));
   };
+
+  console.log(aboutData);
 
   return (
     <>
@@ -35,21 +37,15 @@ export const About = () => {
         <Grid item style={{ paddingTop: "2em", paddingBottom: "1em" }}>
           <Typography variant="h4">FEATURES</Typography>
         </Grid>
-
         <Grid item>
           <ul>
-            <li>
-              <Typography variant="h6">It is a PWA</Typography>
-            </li>
-            <li>
-              <Typography variant="h6">It is fast</Typography>
-            </li>
-            <li>
-              <Typography variant="h6">It is offline-first</Typography>
-            </li>
-            <li>
-              <Typography variant="h6">It is small in size</Typography>
-            </li>
+            {aboutData.features.map((feature) => {
+              return (
+                <li>
+                  <Typography variant="h6">{feature}</Typography>
+                </li>
+              );
+            })}
           </ul>
         </Grid>
       </Grid>
