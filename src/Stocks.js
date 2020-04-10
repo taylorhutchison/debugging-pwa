@@ -29,7 +29,6 @@ export const Stocks = () => {
 
   return (
     <>
-      <HomePageHeader />
       <RefreshStocks onClick={onClickRefresh} />
       <div className="stock-container">
         {stockData.map((data, key) => {
@@ -48,14 +47,6 @@ export const Stocks = () => {
       </div>
       <Stock />
     </>
-  );
-};
-
-const HomePageHeader = () => {
-  return (
-    <header className="header">
-      <Typography variant="h2">Stock Prices</Typography>
-    </header>
   );
 };
 
