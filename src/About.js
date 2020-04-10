@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, Typography } from "@material-ui/core";
 
 export const About = () => {
+  const [aboutData, setAboutData] = useState({});
+
+  useEffect(() => {
+    getAboutData();
+  }, []);
+
+  const getAboutData = () => {
+    fetch("https://zeit-stock-price-api.now.sh/api/about")
+      .then((response) => response.json())
+      .then((jsonResponse) => {
+        console.log(jsonResponse);
+        setAboutData(jsonResponse.body);
+      })
+      .catch((err) => console.log(err));
+  };
+
   return (
     <>
       <Grid container justify="center" style={{ backgroundColor: "#d2c6b2" }}>
         <Grid item xs={10} style={{ paddingTop: "2em", paddingBottom: "2em" }}>
-          <Typography variant="h4">
-            We are tenaciously reimagining future of the world — one that is
-            built on ingenious technology, fueled by market-moving insights and
-            primarily driven by forward thinking.
-          </Typography>
+          <Typography variant="h4">{aboutData.tagLine}</Typography>
         </Grid>
       </Grid>
 
