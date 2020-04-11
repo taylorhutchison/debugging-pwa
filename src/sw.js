@@ -66,6 +66,7 @@ function updateCache(request, cacheName) {
 function refresh(response) {
   return self.clients.matchAll().then(function (clients) {
     clients.forEach(function (client) {
+      console.log('sending refresh message')
       client.postMessage({ msg: "refresh", res: response });
     });
   });
