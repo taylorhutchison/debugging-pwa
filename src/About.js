@@ -1,22 +1,8 @@
-import React, { useEffect, useState } from "react";
 import { Grid, Typography } from "@material-ui/core";
+import React from "react";
+import { aboutData } from "./aboutData";
 
 export const About = () => {
-  const [aboutData, setAboutData] = useState({ tagLine: "", features: [] });
-
-  useEffect(() => {
-    getAboutData();
-  }, []);
-
-  const getAboutData = () => {
-    fetch("https://zeit-stock-price-api.now.sh/api/about")
-      .then((response) => response.json())
-      .then((jsonResponse) => {
-        setAboutData(jsonResponse.body);
-      })
-      .catch((err) => console.log(err.message));
-  };
-
   return (
     <>
       <Grid container justify="center" className="tagline-container">
