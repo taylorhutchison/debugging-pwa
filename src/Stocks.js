@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Typography, Grid, Button } from "@material-ui/core";
 import StockImage from "./stocks.svg";
+import { mockStockPrices } from "./data";
 
 export const Stocks = () => {
   const [stockData, setStockData] = useState([]);
@@ -21,6 +22,9 @@ export const Stocks = () => {
   };
 
   const getStockPriceData = () => {
+    if (window.location.hostname === "localhost")
+      return setStockData(mockStockPrices);
+
     fetch("/api")
       .then((response) => response.json())
       .then((jsonData) => setStockData(jsonData.body))

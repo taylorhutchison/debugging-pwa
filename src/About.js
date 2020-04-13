@@ -1,6 +1,6 @@
 import { Grid, Typography } from "@material-ui/core";
 import React from "react";
-import { aboutData } from "./aboutData";
+import { aboutData } from "./data";
 
 export const About = () => {
   return (
