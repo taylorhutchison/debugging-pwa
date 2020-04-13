@@ -11,7 +11,12 @@ self.addEventListener("fetch", (event) => {
   if (!navigator.onLine)
     event.respondWith(caches.match(event.request).then((response) => response));
 
-  event.respondWith(caches.match(event.request).then((response) => response));
+  event.respondWith(
+    caches.match(event.request).then((response) => {
+      return response || updateCache(event.request, cacheName);
+    })
+  );
+
   event.waitUntil(
     updateCache(event.request, cacheName)
       .then((networkResponse) => networkResponse.json())
