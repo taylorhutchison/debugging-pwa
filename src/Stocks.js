@@ -43,7 +43,7 @@ export const Stocks = () => {
                 company={data.company}
                 ticker={data.ticker}
                 stockPrice={data.stockPrice}
-                timeElapsed={data.timeElapsed}
+                website={data.website}
               />
             </div>
           );
@@ -58,14 +58,11 @@ const RefreshStocks = ({ onClick }) => {
   return (
     <Grid
       container
-      justify="center"
+      justify="space-around"
       className="refresh-container"
       alignItems="center"
     >
-      <Grid item xs={2}>
-        <img src={StockImage} alt="stock" className="stock-image" />
-      </Grid>
-      <Grid item xs={4}></Grid>
+      <img src={StockImage} alt="stock" className="stock-image" />
       <div>
         <Button onClick={onClick} variant="contained" color="primary">
           REFRESH
@@ -75,7 +72,7 @@ const RefreshStocks = ({ onClick }) => {
   );
 };
 
-const Stock = ({ company, ticker, stockPrice, timeElapsed }) => {
+const Stock = ({ company, ticker, stockPrice, website }) => {
   if (!company) return <div />;
   return (
     <Grid container className="stock" alignItems="center">
@@ -96,7 +93,9 @@ const Stock = ({ company, ticker, stockPrice, timeElapsed }) => {
       </Grid>
       <Grid item xs={6} sm={3}>
         <Typography variant="body2" color="textSecondary" align="center">
-          {timeElapsed}
+          <a href={website} target="_blank" rel="noopener noreferrer" className="visit-site">
+            website
+          </a>
         </Typography>
       </Grid>
     </Grid>
