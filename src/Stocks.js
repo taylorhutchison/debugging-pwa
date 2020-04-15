@@ -93,7 +93,12 @@ const Stock = ({ company, ticker, stockPrice, website }) => {
       </Grid>
       <Grid item xs={6} sm={3}>
         <Typography variant="body2" color="textSecondary" align="center">
-          <a href={website} target="_blank" rel="noopener noreferrer" className="visit-site">
+          <a
+            href={website}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="visit-site"
+          >
             website
           </a>
         </Typography>
