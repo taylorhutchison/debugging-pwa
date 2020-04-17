@@ -11,12 +11,6 @@ export const Stocks = () => {
     getStockPriceData();
   }, []);
 
-  useEffect(() => {
-    navigator.serviceWorker.addEventListener("message", (event) => {
-      setStockData(event.data.res);
-    });
-  }, []);
-
   const onClickRefresh = () => {
     getStockPriceData();
   };
