@@ -33,7 +33,6 @@ export const Stocks = () => {
           return (
             <div key={key}>
               <Stock
-                key={key}
                 company={data.company}
                 ticker={data.ticker}
                 stockPrice={data.stockPrice}
@@ -43,7 +42,6 @@ export const Stocks = () => {
           );
         })}
       </div>
-      <Stock />
     </>
   );
 };
