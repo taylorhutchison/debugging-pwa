@@ -33,7 +33,7 @@ const stockData = () => {
     {
       company: "Sunrun Inc",
       ticker: "RUN",
-      stockPrice: getUpdatedRates(9.87).toFixed(2) + " USD",
+      stockPrice: getUpdatedRates(19.87).toFixed(2) + " USD",
       website: "https://www.sunrun.com",
     },
     {
@@ -57,7 +57,7 @@ const stockData = () => {
     {
       company: "Vivint Solar Inc",
       ticker: "VSLR",
-      stockPrice: getUpdatedRates(4.11).toFixed(2) + " USD",
+      stockPrice: getUpdatedRates(10.11).toFixed(2) + " USD",
       website: "https://www.vivintsolar.com/",
     },
     {
