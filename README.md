@@ -6,7 +6,7 @@ Before running the project, please make sure you have the following:
 - Node.js LTS version which can be found [here](https://nodejs.org/en/download/). The course is upto date using this version at all times.
 - Please refer to the help section below to resolve most common questions.
 
-# Help
+# Help and FAQs
 
 ### - Can I use my own IDE to develop the project during the course ?
 Yes, feel free to use your own IDE for the course.
@@ -45,7 +45,6 @@ Click on [this click](https://nodejs.org/en/download/) and the `npm` version sho
 You must ensure that the npm version and node version should match with what is mentioned on this official page.
 
 ### - What is the React version need for this course ?
-********************
 We are using `react` >=16.13.1 and `react-dom` >= 16.13.1 at all times. All the dependecies needed to run this project will be available in package.json
 file. You do not have to worry about finding the peer dependencies to run the project. 
 All you need are the 2 following commands to get started as long as you have the right version of Node.
@@ -99,3 +98,9 @@ To create a production build, use npm run build.
 
 Open Chrome on your phone and hit this URL:
 [http://192.161.3.10:3000](http://192.161.3.10:3000)
+
+# Module 02 - Project Set up and Code Walkthrough 
+
+```sh
+git checkout module_02_project_setup
+```
