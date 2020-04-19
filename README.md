@@ -84,10 +84,10 @@ Here are few ways to do so:
 Open [http://localhost:3000](http://localhost:3000) 
 The page will reload if you make edits and you will also see any lint errors in the console.
 
-2) You can open Stratafly on your phone Chrome browser by using the IP Address from your console. 
+2) You can open the app on your phone Chrome browser by using the IP Address from your console. 
 For example after you run `npm start`, you will see the following on your terminal.
 ```$xslt
-You can now view stratafly in the browser.
+You can now view app in the browser.
 
   Local:            http://localhost:3000/
   On Your Network:  http://192.161.3.10:3000/
