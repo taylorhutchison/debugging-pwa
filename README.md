@@ -102,7 +102,17 @@ Open Chrome on your phone and hit this URL:
 ### - How do I deploy the App using ZEIT now ?
 You will need to signup on ZEIT using your GitHub account.    
 You can sign up for ZEIT [here](https://zeit.co/)
+Once the account is created, you will `now` dependency on your machine. To download that use either of the commands below.   
 
+With **yarn**
+```sh
+yarn global add now
+```
+
+With **npm**
+```sh
+npm i -g now
+```
 
 # Module 02 - Project Set up and Code Walkthrough 
 
