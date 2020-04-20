@@ -99,6 +99,11 @@ To create a production build, use npm run build.
 Open Chrome on your phone and hit this URL:
 [http://192.161.3.10:3000](http://192.161.3.10:3000)
 
+### - How do I deploy the App using ZEIT now ?
+You will need to signup on ZEIT using your GitHub account.    
+You can sign up for ZEIT [here](https://zeit.co/)
+
+
 # Module 02 - Project Set up and Code Walkthrough 
 
 ```sh
