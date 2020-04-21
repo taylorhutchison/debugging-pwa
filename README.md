@@ -99,7 +99,7 @@ To create a production build, use npm run build.
 Open Chrome on your phone and hit this URL:
 [http://192.161.3.10:3000](http://192.161.3.10:3000)
 
-### - How do I deploy the App using ZEIT now ?
+### - How to download ZEIT now ?
 You will need to signup on ZEIT using your GitHub account.    
 You can sign up for ZEIT [here](https://zeit.co/)
 Once the account is created, you will `now` dependency on your machine. To download that use either of the commands below.   
@@ -113,6 +113,24 @@ With **npm**
 ```sh
 npm i -g now
 ```
+
+### How to deploy App on ZEIT using `now` CLI?
+Follow the steps below to deploy the app.
+- Make sure you already have an account on ZEIT and `now` CLI dependency is downloaded. If that is not the case, read the above FAQ to install ZEIT `now` first.
+- Login to ZEIT using the command below and follow the instruction on the command line.
+  ```sh
+  now login
+  ```
+- After successful login, if the project is deployed for the first time, then use the command below from the root of the project and follow the instructions on the command line.
+  ```sh
+  now
+  ```
+- If you have previously deployed the app, then you only need to run the following command from the root of the project and it will give you the production url to access the app on the browser.
+  ```sh
+  now --prod
+  ```
+
+
 
 # Module 02 - Project Set up and Code Walkthrough 
 
