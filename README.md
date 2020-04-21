@@ -99,7 +99,7 @@ To create a production build, use npm run build.
 Open Chrome on your phone and hit this URL:
 [http://192.161.3.10:3000](http://192.161.3.10:3000)
 
-### - How to download ZEIT now ?
+### - How to download ZEIT `now` CLI ?
 You will need to signup on ZEIT using your GitHub account.    
 You can sign up for ZEIT [here](https://zeit.co/)
 Once the account is created, you will `now` dependency on your machine. To download that use either of the commands below.   
