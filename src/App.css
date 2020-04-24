@@ -54,3 +54,15 @@ a {
 .visit-site {
   color: gray;
 }
+
+.hidden {
+  display: none !important;
+}
+
+#installContainer {
+  background-color: #f2ed6f;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1em;
+}
