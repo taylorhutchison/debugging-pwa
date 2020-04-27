@@ -130,10 +130,14 @@ Follow the steps below to deploy the app.
   now --prod
   ```
 
-
-
 # Module 02 - Project Set up and Code Walkthrough 
 
 ```sh
 git checkout module_02_project_setup
+```
+
+# Module 03 - Audit and Debug App Installability
+
+```sh
+git checkout module03_debug_app_install
 ```
