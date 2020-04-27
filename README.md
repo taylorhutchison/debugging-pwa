@@ -141,3 +141,7 @@ git checkout module_02_project_setup
 ```sh
 git checkout module03_debug_app_install
 ```
+
+### Note: Automatic browser promotion not available in Chrome incognito window.   
+In Chrome's incognito window, PWA app install prompt does not work. In private mode, there is no way browser can get the information about already installed apps so it doesn't know whether or not the app user is browsing has been installed. Hence it does not show install prompt. 
+[Here is the reference](https://wicg.github.io/get-installed-related-apps/spec/#privacy-considerations) in W3C for privacy considerations.
