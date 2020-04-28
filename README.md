@@ -142,6 +142,15 @@ git checkout module_02_project_setup
 git checkout module03_debug_app_install
 ```
 
-### Note: Automatic browser promotion not available in Chrome incognito window.   
+## Notes: 
+
+### - *Automatic browser promotion not available in Chrome incognito window*   
 In Chrome's incognito window, PWA app install prompt does not work. In private mode, there is no way browser can get the information about already installed apps so it doesn't know whether or not the app user is browsing has been installed. Hence it does not show install prompt. 
 [Here is the reference](https://wicg.github.io/get-installed-related-apps/spec/#privacy-considerations) in W3C for privacy considerations.
+
+### - *Workbox Webpack Plugin*
+You may be interested in learning about [Workbox Precaching](https://developers.google.com/web/tools/workbox/modules/workbox-precaching)
+
+The code for this plugin is available on [GitHub](https://github.com/GoogleChrome/workbox/tree/master/packages/workbox-precaching)
+
+Learn more about [preCacheAndRoute](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-precaching#.precacheAndRoute)
