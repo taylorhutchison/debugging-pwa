@@ -14,9 +14,8 @@ function App() {
     promptEvent.userChoice.then((choice) => {
       console.log("User selected -> ", choice);
       window.deferredPrompt = null;
-      document
-        .getElementById("installContainer")
-        .classList.toggle("hidden", true);
+      console.log("done");
+      document.getElementById("installContainer").style.display = "none";
     });
   };
 
