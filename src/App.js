@@ -7,16 +7,16 @@ import { Stocks } from "./Stocks";
 
 function App() {
   const onClick = () => {
-    console.log("User clicked INSTALL button");
-    const promptEvent = window.deferredPrompt;
-    if (!promptEvent) return;
-    promptEvent.prompt();
-    promptEvent.userChoice.then((choice) => {
-      console.log("User selected -> ", choice);
-      window.deferredPrompt = null;
-      console.log("done");
-      document.getElementById("installContainer").style.display = "none";
-    });
+    // console.log("User clicked INSTALL button");
+    // const promptEvent = window.deferredPrompt;
+    // if (!promptEvent) return;
+    // promptEvent.prompt();
+    // promptEvent.userChoice.then((choice) => {
+    //   console.log("User selected -> ", choice);
+    //   window.deferredPrompt = null;
+    //   console.log("done");
+    //   document.getElementById("installContainer").style.display = "none";
+    // });
   };
 
   return (
@@ -49,10 +49,10 @@ function App() {
   );
 }
 
-window.addEventListener("beforeinstallprompt", (event) => {
-  console.log("beforeinstallprompt fired -> ", event);
-  window.deferredPrompt = event;
-  document.getElementById("installContainer").classList.toggle("hidden", false);
-});
+// window.addEventListener("beforeinstallprompt", (event) => {
+//   console.log("beforeinstallprompt fired -> ", event);
+//   window.deferredPrompt = event;
+//   document.getElementById("installContainer").classList.toggle("hidden", false);
+// });
 
 export default App;
