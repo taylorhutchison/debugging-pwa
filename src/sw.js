@@ -1,5 +1,4 @@
 self.addEventListener("install", (event) => {
-  console.log("V2 installing")
   console.log("New service worker installed");
 });
 
