@@ -154,3 +154,5 @@ You may be interested in learning about [Workbox Precaching](https://developers.
 The code for this plugin is available on [GitHub](https://github.com/GoogleChrome/workbox/tree/master/packages/workbox-precaching)
 
 Learn more about [preCacheAndRoute](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-precaching#.precacheAndRoute)
+
+# Module 04 - Inspect Service Workers
