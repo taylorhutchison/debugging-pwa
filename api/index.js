@@ -13,7 +13,7 @@ function getUpdatedRates(baseRate) {
 const stockData = () => {
   return [
     {
-      company: "  Twitter Inc",
+      company: "Twitter Inc",
       ticker: "TWTR",
       stockPrice: getUpdatedRates(22.76).toFixed(2) + " USD",
       website: "https://twitter.com/",
