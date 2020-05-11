@@ -4,9 +4,4 @@ self.addEventListener("install", (event) => {
 
 self.addEventListener("activate", function (event) {
   console.log("Service Worker is now activated");
-  self.clients.matchAll().then(function (clients) {
-    clients.forEach(function (client) {
-      client.postMessage("createDB");
-    });
-  });
 });
