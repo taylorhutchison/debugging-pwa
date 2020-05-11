@@ -3,10 +3,9 @@ const DB_VERSION = 1;
 const DB_NAME = "stockTrackerDb";
 const DB_STORE_NAME = "stockData";
 const DB_STORE_KEY = "stockPrices";
-let db;
 
 export const openDatabase = async () => {
-  db = await openDB(DB_NAME, DB_VERSION, {
+  let db = await openDB(DB_NAME, DB_VERSION, {
     upgrade(db) {
       db.createObjectStore(DB_STORE_NAME);
     },
@@ -14,7 +13,7 @@ export const openDatabase = async () => {
   return db;
 };
 
-export const fetchFromNetwork = async () => {
+const fetchFromNetwork = async () => {
   let response = await fetch("/api");
   let stockData = response.json().then((json) => json.body);
   return stockData;
