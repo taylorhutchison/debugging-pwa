@@ -156,3 +156,9 @@ The code for this plugin is available on [GitHub](https://github.com/GoogleChrom
 Learn more about [preCacheAndRoute](https://developers.google.com/web/tools/workbox/reference-docs/latest/module-workbox-precaching#.precacheAndRoute)
 
 # Module 04 - Inspect Service Workers
+
+
+### Worker Objects have a `postMessage()` method.
+- On [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Worker)   
+- [HTML Spec](https://html.spec.whatwg.org/multipage/workers.html#dom-worker-postmessage)
+
