@@ -3,52 +3,18 @@ import "./App.css";
 import { Typography, Grid, Button } from "@material-ui/core";
 import StockImage from "./stocks.svg";
 import { mockStockPrices } from "./data";
-import { openDatabase, fetchAndSaveToDB, getDataFromDB } from "./db";
-let db;
 
 export const Stocks = () => {
   const [stockData, setStockData] = useState([]);
 
   useEffect(() => {
-    if (!navigator.onLine) refreshData();
-    else getStockPriceData();
+    getStockPriceData();
   }, []);
 
-  useEffect(() => {
-    navigator.serviceWorker.addEventListener("message", (event) => {
-      if (event.data.type === "CREATE_DB") {
-        openDatabase().then((dbPromise) => {
-          db = dbPromise;
-          fetchAndSaveToDB(db);
-        });
-      }
-    });
-  }, []);
-
-  /**
-   * Get data from indexedDB -> fetch from network in the background and update UI
-   * If connection to db is lost due to browser refresh it re-opens database and get data.
-   */
-  const refreshData = async () => {
-    if (!db) {
-      const dbPromise = await openDatabase();
-      db = dbPromise;
-    }
-    getDataFromDB(db)
-      .then(({ dbResults, newResultsPromise }) => {
-        setStockData(dbResults || []);
-        return newResultsPromise;
-      })
-      .then((updatedResults) => {
-        if (updatedResults.length > 0) setStockData(updatedResults);
-      })
-      .catch((err) => console.log(err));
+  const onClickRefresh = () => {
+    getStockPriceData();
   };
 
-  /**
-   * Get stock price data from network.
-   * This function will execute when browser is refreshed (online and offline) and when app loads
-   */
   const getStockPriceData = () => {
     if (window.location.hostname === "localhost")
       return setStockData(mockStockPrices);
@@ -56,12 +22,12 @@ export const Stocks = () => {
     fetch("/api")
       .then((response) => response.json())
       .then((jsonData) => setStockData(jsonData.body))
-      .catch((err) => console.log("Error fetching data from api ", err));
+      .catch((err) => console.log(err));
   };
 
   return (
     <>
-      <RefreshStocks onClick={refreshData} />
+      <RefreshStocks onClick={onClickRefresh} />
       <div className="stock-container">
         {stockData.map((data, key) => {
           return (
