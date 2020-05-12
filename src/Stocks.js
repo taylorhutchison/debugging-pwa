@@ -56,7 +56,7 @@ const RefreshStocks = ({ onClick }) => {
     >
       <img src={StockImage} alt="stock" className="stock-image" />
       <div>
-        <Button onClick={onClick} variant="contained" color="primary">
+        <Button onClick={onClick} variant="outlined" color="primary">
           REFRESH
         </Button>
       </div>
