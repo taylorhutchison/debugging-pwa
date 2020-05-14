@@ -25,11 +25,12 @@ export const Stocks = () => {
     });
   }, []);
 
+  /**
+   * Get data from indexedDB -> fetch from network in the background and update UI
+   * If connection to db is lost due to browser refresh it re-opens database and get data.
+   */
   const refreshData = async () => {
-    if (!db) {
-      const dbPromise = await openDatabase();
-      db = dbPromise;
-    }
+    if (!db) db = await openDatabase();
     getDataFromDB(db)
       .then(({ dbResults, newResultsPromise }) => {
         setStockData(dbResults || []);
