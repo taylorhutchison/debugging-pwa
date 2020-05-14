@@ -3,18 +3,48 @@ import "./App.css";
 import { Typography, Grid, Button } from "@material-ui/core";
 import StockImage from "./stocks.svg";
 import { mockStockPrices } from "./data";
+import { openDatabase, fetchAndSaveToDB, getDataFromDB } from "./db";
+let db;
 
 export const Stocks = () => {
   const [stockData, setStockData] = useState([]);
 
   useEffect(() => {
-    getStockPriceData();
+    if (!navigator.onLine) refreshData();
+    else getStockPriceData();
   }, []);
 
-  const onClickRefresh = () => {
-    getStockPriceData();
+  useEffect(() => {
+    navigator.serviceWorker.addEventListener("message", (event) => {
+      if (event.data.type === "CREATE_DB") {
+        openDatabase().then((dbPromise) => {
+          db = dbPromise;
+          fetchAndSaveToDB(db);
+        });
+      }
+    });
+  }, []);
+
+  const refreshData = async () => {
+    if (!db) {
+      const dbPromise = await openDatabase();
+      db = dbPromise;
+    }
+    getDataFromDB(db)
+      .then(({ dbResults, newResultsPromise }) => {
+        setStockData(dbResults || []);
+        return newResultsPromise;
+      })
+      .then((updatedResults) => {
+        if (updatedResults.length > 0) setStockData(updatedResults);
+      })
+      .catch((err) => console.log(err));
   };
 
+  /**
+   * Get stock price data from network.
+   * This function will execute when browser is refreshed (online and offline) and when app loads
+   */
   const getStockPriceData = () => {
     if (window.location.hostname === "localhost")
       return setStockData(mockStockPrices);
@@ -27,7 +57,7 @@ export const Stocks = () => {
 
   return (
     <>
-      <RefreshStocks onClick={onClickRefresh} />
+      <RefreshStocks onClick={refreshData} />
       <div className="stock-container">
         {stockData.map((data, key) => {
           return (
