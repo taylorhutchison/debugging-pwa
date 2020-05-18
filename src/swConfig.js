@@ -31,4 +31,3 @@ export default {
     waitingServiceWorker.postMessage({ type: "SKIP_WAITING" });
   },
 };
-

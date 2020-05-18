@@ -160,6 +160,10 @@ Learn more about [preCacheAndRoute](https://developers.google.com/web/tools/work
 git checkout module04_inspect_service_worker
 ```
 
+### Adding `idb` dependency
+`sh
+yarn add idb
+`
 
 ### Worker Objects have a `postMessage()` method.
 - On [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Worker)   
