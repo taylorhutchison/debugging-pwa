@@ -100,10 +100,9 @@ Open Chrome on your phone and hit this URL:
 [http://192.161.3.10:3000](http://192.161.3.10:3000)
 
 ### - How to download ZEIT `now` CLI ?
-You will need to signup on ZEIT using your GitHub account.    
-You can sign up for ZEIT [here](https://zeit.co/)    
-Zeit has been re-branded to Vercel so when you hit the above URL, you will be re-directed to [https://vercel.com/](https://vercel.com/)   
-Once the account is created, you will `now` dependency on your machine. To download that use either of the commands below.   
+- You will need to signup on ZEIT using your GitHub account.    
+- You can sign up for ZEIT [here](https://zeit.co/). ZEIT has been re-branded to Vercel so when you hit the above URL, you will be re-directed to [https://vercel.com/](https://vercel.com/)   
+- Once the account is created, you will need `now` CLI dependency on your machine. To download that use either of the commands below.   
 
 With **yarn**
 ```sh
