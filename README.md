@@ -169,3 +169,18 @@ yarn add idb
 - On [MDN](https://developer.mozilla.org/en-US/docs/Web/API/Worker)   
 - [HTML Spec](https://html.spec.whatwg.org/multipage/workers.html#dom-worker-postmessage)
 
+# Module 05 - Inspect and Debug for PWA Optimizations
+```sh
+git checkout module05_optimal_features
+```
+
+# Resources
+Readings that would worth while:
+- [Service Worker Specification](https://w3c.github.io/ServiceWorker/#service-worker-concept)
+- [Service Worker API](https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API)
+- [CacheStorage](https://developer.mozilla.org/en-US/docs/Web/API/CacheStorage)
+- [Cache API](https://developer.mozilla.org/en-US/docs/Web/API/Cache)
+
+
+
+
