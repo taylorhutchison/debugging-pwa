@@ -104,15 +104,15 @@ Open Chrome on your phone and hit this URL:
 - You can sign up for ZEIT [here](https://zeit.co/). ZEIT has been re-branded to Vercel so when you hit the above URL, you will be re-directed to [https://vercel.com/](https://vercel.com/)   
 - Once the account is created, you will need `now` CLI dependency on your machine. To download that use either of the commands below.   
 
-With **yarn**
-```sh
-yarn global add now
-```
+  With **yarn**
+  ```sh
+  yarn global add now
+  ```
 
-With **npm**
-```sh
-npm i -g now
-```
+  With **npm**
+  ```sh
+  npm i -g now
+  ```
 
 ### How to deploy App on ZEIT using `now` CLI?
 Follow the steps below to deploy the app.
