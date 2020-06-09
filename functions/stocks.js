@@ -1,7 +1,7 @@
 exports.handler = function (event, context, callback) {
   callback(null, {
     statusCode: 200,
-    body: stockData()
+    body: JSON.stringify(stockData())
   })
 }
 
