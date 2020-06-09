@@ -51,8 +51,8 @@ export const Stocks = () => {
       return setStockData(mockStockPrices);
 
     fetch("/.netlify/functions/stocks")
-      .then((response) => response.json())
-      .then((jsonData) => setStockData(jsonData.body))
+      .then((response) => { console.log(response); return response.json(); })
+      .then((jsonData) => setStockData(jsonData))
       .catch((err) => console.log(err));
   };
 
