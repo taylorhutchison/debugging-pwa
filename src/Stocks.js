@@ -50,7 +50,7 @@ export const Stocks = () => {
     if (window.location.hostname === "localhost")
       return setStockData(mockStockPrices);
 
-    fetch("/api")
+    fetch("/.netlify/functions/stocks")
       .then((response) => response.json())
       .then((jsonData) => setStockData(jsonData.body))
       .catch((err) => console.log(err));
