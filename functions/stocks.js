@@ -1,9 +1,3 @@
-module.exports = (req, res) => {
-  res.json({
-    body: stockData(),
-  });
-};
-
 exports.handler = function (event, context, callback) {
   callback(null, {
     statusCode: 200,
