@@ -14,7 +14,7 @@ export const openDatabase = async () => {
 };
 
 const fetchFromNetwork = async () => {
-  let response = await fetch("/api");
+  let response = await fetch("/.netlify/functions/stocks");
   let stockData = response.json().then((json) => json.body);
   return stockData;
 };

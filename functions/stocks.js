@@ -4,6 +4,13 @@ module.exports = (req, res) => {
   });
 };
 
+exports.handler = function (event, context, callback) {
+  callback(null, {
+    statusCode: 200,
+    bode: stockData()
+  })
+}
+
 function getUpdatedRates(baseRate) {
   const maxRate = baseRate + 1;
   const minRate = baseRate - 5;
